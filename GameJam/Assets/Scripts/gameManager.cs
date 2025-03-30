@@ -7,8 +7,9 @@ public class gameManager : MonoBehaviour
     public PlayerCam  cameraMovement;
     void Start()
     {
-        
+       // inkTest = GetComponent<inkTestingScript>();
         inkTest.enabled = false;
+        
     }
 
     // Update is called once per frame
@@ -16,8 +17,11 @@ public class gameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            print("enabled");
+           
             movement.enabled = false;
             inkTest.enabled = true;
+            inkTest.Reset();
             cameraMovement.enabled = false;
 
             Cursor.lockState = CursorLockMode.None;

@@ -24,9 +24,16 @@ public class inkTestingScript : MonoBehaviour
         refreshUI();
         
         
-        //movement = GetComponent<PlayerMovementTutorial>();
+        
 
 
+    }
+
+    public void Reset()
+    {
+        story = new Story(inkJson.text);
+
+        refreshUI();
     }
 
     // Update is called once per frame
@@ -35,7 +42,9 @@ public class inkTestingScript : MonoBehaviour
         
     }
 
-    void refreshUI()
+   
+
+    public void refreshUI()
     {
         eraseUI();
         RectTransform panel = Instantiate(panelPrefab);
@@ -102,14 +111,9 @@ public class inkTestingScript : MonoBehaviour
         return text;
         
     }
-    /*
-    private void OnEnable()
-    {
-        movement.enabled = false;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-    */
+    
+   
+    
     private void OnDisable()
     {
         eraseUI();
