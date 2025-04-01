@@ -11,8 +11,11 @@ public class inkTestingScript : MonoBehaviour
     private Story story;
     public TextMeshProUGUI textPrefab;
     public RectTransform panelPrefab;
+   
     public Button buttonPrefab;
     public Transform canvasTransform;
+    public Image imagePrefab;
+    public List<Sprite> sprites;
 
     //public PlayerMovementTutorial movement { get; private set; }
     
@@ -48,7 +51,12 @@ public class inkTestingScript : MonoBehaviour
     {
         eraseUI();
         RectTransform panel = Instantiate(panelPrefab);
+      
+        
+
         panel.SetParent(canvasTransform, false);
+    
+
         TextMeshProUGUI storyText = Instantiate(textPrefab) as TextMeshProUGUI;
 
         string text = loadStoryChunk();
@@ -57,7 +65,29 @@ public class inkTestingScript : MonoBehaviour
 
         if(tags.Count > 0)
         {
-            text = "<b>" + tags[0] + "</b> - " + text;
+            Image talkingHead = Instantiate(imagePrefab) as Image;
+            talkingHead.transform.SetParent(canvasTransform, false);
+
+            if (tags[0] == "Imagen1")
+            {
+                talkingHead.sprite = sprites[0];
+            }
+
+            if (tags[0] == "Imagen2")
+            {
+                talkingHead.sprite = sprites[1];
+            }
+
+            if (tags[0] == "Imagen3")
+            {
+                talkingHead.sprite = sprites[2];
+            }
+
+            if (tags[0] == "Imagen4")
+            {
+                talkingHead.sprite = sprites[3];
+            }
+            
         }
 
         

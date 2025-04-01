@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - canPickUp
+  - interact
   layers:
   - Default
   - TransparentFX
