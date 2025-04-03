@@ -58,7 +58,6 @@
         Ah, si eso pasa, ojala para el siguiente la materia sea mas sencilla o por lo menos el profe enseñe mejor. #Imagen2*/
         
         ->Fin
-        
 
     
 ==Profe==
