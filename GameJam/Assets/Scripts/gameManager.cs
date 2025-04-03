@@ -10,14 +10,22 @@ public class gameManager : MonoBehaviour
     float raycastDistance = 5; //Adjust to suit your use case
     public TextMeshProUGUI textPrefab;
     public Transform canvasTransform;
+    public Transform textureCanvas;
     TextMeshProUGUI interactText;
     bool interacting = false;
+    public RawImage imagePrefab;
+    RawImage rawImage;
+
+    private bool active = true;
+
+    public SceneController sceneController;
 
     void Start()
     {
        // inkTest = GetComponent<inkTestingScript>();
         inkTest.enabled = false;
         interactText = Instantiate(textPrefab) as TextMeshProUGUI;
+        rawImage = Instantiate(imagePrefab) as RawImage;
     }
 
     // Update is called once per frame
@@ -26,7 +34,28 @@ public class gameManager : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
 
         RaycastHit hit;
-        
+        rawImage.transform.SetParent(textureCanvas, false);
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (active)
+            {
+                rawImage.gameObject.SetActive(false);
+                active = false;
+            }
+            else
+            {
+                rawImage.gameObject.SetActive(true);
+                active = true;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            sceneController.loadScene("escenaPrueba");
+        }
+
+        //rawImage.transform.SetAsFirstSibling();
 
         if (Physics.Raycast(ray, out hit, raycastDistance)) //Actively creates a ray using the above set perameters at the predeterminded distance
         {
@@ -38,6 +67,7 @@ public class gameManager : MonoBehaviour
                 
                 if (hit.collider.CompareTag("interact"))//Checking if the Raycast has hit a collider with the tag of note
                 {
+                    print("sirve");
                     print(interacting);
 
                     interactText.text = "Presiona [I] para interactuar."; //Setting the Interaction Text to let the player know they are now hovering an interactable object
@@ -80,14 +110,19 @@ public class gameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            movement.enabled = true;
-            inkTest.enabled = false;
-            cameraMovement.enabled = true;
-
-            interacting = false;
-
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            returnToGame();
         }
+    }
+
+    public void returnToGame()
+    {
+        movement.enabled = true;
+        inkTest.enabled = false;
+        cameraMovement.enabled = true;
+
+        interacting = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

@@ -1,8 +1,15 @@
-"Hola, buenos dias, ¿Como has estado?" #Imagen1
 
-* [Muy Bien]
 
-    Me <i>alegro</i> mucho, y ¿Como te ha ido en la universidad ultimamente? #Imagen2
+ Hola, soy Yukiko./¡La pizza con piña es la mejor!/¿Verdad? #Yukiko
+
+
+
+* [¡Por supuesto!]
+    ->Fin
+
+   /* Me <i>alegro</i> mucho, y ¿Como te ha ido en la universidad ultimamente? #Imagen2
+    
+    Oye como va todo #Imagen2
     
     **[Bien, dentro de poco tengo los examenes finales del semestre]
     
@@ -12,16 +19,17 @@
         ->Fin
     
     **[Bien, pero el profe es un desgraciado]
-    ->Profe
+    ->Profe*/
     
     
     
     
      
 
-* [Regular]
+* [Se deja comer]
+    ->Fin
 
-    ¿Y porque asi?#Imagen3
+   /* ¿Y porque asi?#Imagen3
     
     ** [Esque el profe es un desgraciado]
     ->Profe
@@ -34,25 +42,24 @@
     ** [Me saqué una mala nota en el ultimo examen y ahora tengo que recuperar]
         
         Ah, si eso pasa, ojala para el siguiente la materia sea mas sencilla o por lo menos el profe enseñe mejor. #Imagen2
-        ->Fin
+        ->Fin*/
         
         
 
-* [Mal]
+* [No creo...] No estoy seguro de eso...
 
-    ¿Por que, que paso?#Imagen3
+    /*¿Por que, que paso?#Imagen3
     
     **[El profe desgraciado nos puso un examen imposible]
     ->Profe
     
     ** [Me saqué una mala nota en el ultimo examen y ahora tengo que recuperar]
         
-        Ah, si eso pasa, ojala para el siguiente la materia sea mas sencilla o por lo menos el profe enseñe mejor. #Imagen2
+        Ah, si eso pasa, ojala para el siguiente la materia sea mas sencilla o por lo menos el profe enseñe mejor. #Imagen2*/
         
         ->Fin
         
-*[Fin] Muy bien, muy bien, vieras que ahorita no tengo tiempo, pero si quieres despues nos ponemos de acuerdo para platicar.  
-    ->Fin2
+
     
 ==Profe==
         
@@ -63,14 +70,16 @@
             Uy si, que duro eso.#Imagen2
             ->Fin
             
-            
+           
 ==Fin==
 * [Fin]
+    #final
 
-- Bueno, ya me agarró tarde, nos vemos en otro momento #Imagen4
-* Bueno adiós
+
     -> END
     
 ==Fin2==
  -Ok, nos vemos luego.#Imagen1
+ *[Salir]
+    #final
  ->END
