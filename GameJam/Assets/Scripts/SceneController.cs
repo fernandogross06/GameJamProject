@@ -25,6 +25,7 @@ public class SceneController : MonoBehaviour
     public void loadScene(string sceneName)
     {
         StartCoroutine(loadSceneCoroutine(sceneName));
+
     }
 
     private IEnumerator loadSceneCoroutine(string sceneName)

@@ -53,14 +53,14 @@ public class SceneFade : MonoBehaviour
 
         while (elapsedTime < blackImageDuration)
         {
-            if (elapsedTime >= 7)
+            /*if (elapsedTime >= 7)
             {
                 textMesh.text = "5:00 PM";
             }
             else
             {
                 textMesh.text = "8:00 AM";
-            }
+            }*/
 
             print(elapsedTime);
 
@@ -69,6 +69,9 @@ public class SceneFade : MonoBehaviour
             
             yield return null;  // Esperar hasta el siguiente frame
         }
+
+       
+
 
     }
 
