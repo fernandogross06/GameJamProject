@@ -62,7 +62,7 @@ public class SceneFade : MonoBehaviour
                 textMesh.text = "8:00 AM";
             }*/
 
-            print(elapsedTime);
+           // print(elapsedTime);
 
             elapsedTime += Time.deltaTime;
 

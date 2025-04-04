@@ -30,7 +30,7 @@ public class TextAwake : MonoBehaviour
         while (elapsedTime < duracionTexto)
         {
           
-            print(elapsedTime);
+         //   print(elapsedTime);
 
             elapsedTime += Time.deltaTime;
 
@@ -55,7 +55,7 @@ public class TextAwake : MonoBehaviour
 
         text.gameObject.SetActive(false);
 
-
+       
 
     }
 }

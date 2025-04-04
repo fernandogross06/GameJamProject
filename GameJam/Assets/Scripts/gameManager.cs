@@ -52,7 +52,7 @@ public class gameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            sceneController.loadScene("escenaPrueba");
+            sceneController.loadScene("escenaCiudad");
         }
 
         //rawImage.transform.SetAsFirstSibling();
