@@ -28,6 +28,9 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     public Transform orientation;
 
+    public GameObject cameraManagerGO;
+    CameraManager cameraManager;
+
     float horizontalInput;
     float verticalInput;
 
@@ -35,12 +38,14 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     Rigidbody rb;
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         readyToJump = true;
+        cameraManager = cameraManagerGO.GetComponent<CameraManager>();
     }
 
     private void Update()
@@ -48,14 +53,17 @@ public class PlayerMovementTutorial : MonoBehaviour
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
-        MyInput();
-        SpeedControl();
+        if (cameraManager.freeCamera) { 
+            MyInput();
+            SpeedControl();
+            // handle drag
+            if (grounded)
+                rb.linearDamping = groundDrag;
+            else
+                rb.linearDamping = 0;
+        }
 
-        // handle drag
-        if (grounded)
-            rb.linearDamping = groundDrag;
-        else
-            rb.linearDamping = 0;
+
     }
 
     private void FixedUpdate()
