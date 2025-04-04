@@ -1,4 +1,5 @@
 using Ink.Runtime;
+using NUnit.Framework.Interfaces;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -11,8 +12,14 @@ public class inkTestingScript : MonoBehaviour
     private Story story;
     public TextMeshProUGUI textPrefab;
     public RectTransform panelPrefab;
+    public RectTransform cajaBotonesPrefab;
+    public RectTransform nameTagPrefab;
+   
     public Button buttonPrefab;
     public Transform canvasTransform;
+    public Image imagePrefab;
+    public List<Sprite> sprites;
+    public gameManager gameManager;
 
     //public PlayerMovementTutorial movement { get; private set; }
     
@@ -39,25 +46,78 @@ public class inkTestingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            LoadNextStoryChunk();  // Cargar la siguiente línea cuando se presiona la tecla N
+        }
     }
 
-   
 
-    public void refreshUI()
+    void LoadNextStoryChunk()
+    {
+        // Solo cargar un nuevo fragmento si la historia puede continuar
+        if (story.canContinue)
+        {
+            string text = story.Continue();  // Continuar la historia
+            refreshUI(text);  // Actualizar la UI con el nuevo texto
+        }
+    }
+
+    public void refreshUI(string text = "")
     {
         eraseUI();
         RectTransform panel = Instantiate(panelPrefab);
-        panel.SetParent(canvasTransform, false);
-        TextMeshProUGUI storyText = Instantiate(textPrefab) as TextMeshProUGUI;
+        RectTransform cajaBotones = Instantiate(cajaBotonesPrefab);
+        RectTransform nameTag = Instantiate(nameTagPrefab);
+        Image nameTagImage = nameTag.GetComponent<Image>();
+        TextMeshProUGUI textComponent = nameTag.GetComponentInChildren<TextMeshProUGUI>();
 
-        string text = loadStoryChunk();
+
+        panel.SetParent(canvasTransform, false);
+        cajaBotones.SetParent(canvasTransform, false);
+        nameTag.SetParent(canvasTransform, false);
+    
+
+        TextMeshProUGUI storyText = Instantiate(textPrefab) as TextMeshProUGUI;
+        
+
+        if (string.IsNullOrEmpty(text))
+        {
+            text = loadStoryChunk();
+            text = text.Replace("/", "\n"); // Si quieres separar ciertas palabras o secciones
+        }
+
+        
+
+
 
         List<string> tags = story.currentTags;
 
         if(tags.Count > 0)
         {
-            text = "<b>" + tags[0] + "</b> - " + text;
+            Image talkingHead = Instantiate(imagePrefab) as Image;
+            talkingHead.transform.SetParent(canvasTransform, false);
+
+            if (tags[0] == "Yukiko")
+            {
+                talkingHead.sprite = sprites[0];
+                nameTagImage.color = new Color(203, 163, 0);
+                textComponent.text = tags[0];
+            }
+
+
+            if (tags[0] == "final")
+            {
+                gameManager.returnToGame();
+            }
+
+
+
+        }
+        else
+        {
+            nameTagImage.color = new Color(0, 0, 0);
+            textComponent.text = "Tú";
         }
 
         
@@ -70,7 +130,7 @@ public class inkTestingScript : MonoBehaviour
         foreach (Choice choice in story.currentChoices)
         {
             Button choiceButton = Instantiate(buttonPrefab) as Button;
-            choiceButton.transform.SetParent(panel, false);
+            choiceButton.transform.SetParent(cajaBotones, false);
             TextMeshProUGUI choiceText = choiceButton.GetComponentInChildren<TextMeshProUGUI>();
             choiceText.text = choice.text;
             
@@ -105,15 +165,13 @@ public class inkTestingScript : MonoBehaviour
         string text = "";
         if (story.canContinue)
         {
-           text = story.ContinueMaximally();
+            text = story.Continue();
         }
-
         return text;
-        
     }
-    
-   
-    
+
+
+
     private void OnDisable()
     {
         eraseUI();
