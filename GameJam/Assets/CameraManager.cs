@@ -29,4 +29,11 @@ public class CameraManager : MonoBehaviour
             // if current camera == playerCam: freeCamera
         }
     }
+    int SwitchCamera(int new_index)
+    {
+        if(new_index >=0 && new_index < cameraArray.Length) { 
+            index_camera = new_index;
+        }
+        return index_camera;
+    }
 }
