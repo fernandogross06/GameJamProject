@@ -15,12 +15,13 @@ public class gameManager : MonoBehaviour
     bool interacting = false;
     public RawImage imagePrefab;
     RawImage rawImage;
+  
 
     private bool active = true;
 
     int parteHistoria = 0;
 
-    public SceneController sceneController;
+  
 
     void Start()
     {
@@ -52,10 +53,7 @@ public class gameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            sceneController.loadScene("escenaCiudad");
-        }
+     
 
         //rawImage.transform.SetAsFirstSibling();
 
@@ -69,11 +67,10 @@ public class gameManager : MonoBehaviour
                 
                 if (hit.collider.CompareTag("interact"))//Checking if the Raycast has hit a collider with the tag of note
                 {
-                    print("sirve");
-                    print(interacting);
+                  
 
                     interactText.text = "Presiona [I] para interactuar."; //Setting the Interaction Text to let the player know they are now hovering an interactable object
-                    print(interactText.text);
+                  
                     if (Input.GetKeyDown(KeyCode.I))//Check if the player has pressed the Interaction button
                     {
                         interacting = true;
@@ -141,6 +138,7 @@ public class gameManager : MonoBehaviour
 
     public void returnToGame()
     {
+       
         movement.enabled = true;
         inkTest.enabled = false;
         cameraMovement.enabled = true;
