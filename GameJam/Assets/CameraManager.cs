@@ -18,22 +18,33 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            index_camera++;
-            if (index_camera == cameraArray.Length) index_camera = 0;
-            currentCamera = cameraArray[index_camera];
-            freeCamera = (index_camera == 0);
-            //freeCamera = !freeCamera;
 
-            // if current camera == playerCam: freeCamera
-        }
+        
     }
-    int SwitchCamera(int new_index)
+    public int SwitchCamera(int new_index)
     {
         if(new_index >=0 && new_index < cameraArray.Length) { 
             index_camera = new_index;
+            currentCamera = cameraArray[index_camera];
+            freeCamera = (index_camera == 0);
         }
         return index_camera;
+    }
+
+    public int NextCamera()
+    {
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+
+    
+        index_camera++;
+        if (index_camera == cameraArray.Length) index_camera = 0;
+
+        //freeCamera = !freeCamera;
+        }
+        // if current camera == playerCam: freeCamera
+        return index_camera;
+
     }
 }
