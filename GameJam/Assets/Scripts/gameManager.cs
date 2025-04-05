@@ -18,6 +18,8 @@ public class gameManager : MonoBehaviour
 
     private bool active = true;
 
+    int parteHistoria = 0;
+
     public SceneController sceneController;
 
     void Start()
@@ -81,7 +83,30 @@ public class gameManager : MonoBehaviour
                         //Add your Note Method/UI here - for example (if the note has a script attached to it)
                         movement.enabled = false;
                         inkTest.enabled = true;
-                        inkTest.Reset();
+                        
+                        if(parteHistoria == 0)
+                        {
+                            inkTest.Reset("PrimeraParte");
+                        }
+                        if(parteHistoria == 1)
+                        {
+                            inkTest.Reset("SegundaParte");
+                        }
+
+                        if (parteHistoria == 2)
+                        {
+                            inkTest.Reset("TerceraParte");
+                        }
+
+                        if (parteHistoria > 2)
+                        {
+                            inkTest.Reset("Default");
+                        }
+
+                        parteHistoria++;
+                        
+
+
                         cameraMovement.enabled = false;
 
                         Cursor.lockState = CursorLockMode.None;
@@ -100,7 +125,7 @@ public class gameManager : MonoBehaviour
                 }
             }
 
-            print(interacting);
+          //  print(interacting);
             //interactText.text = "";
 
 

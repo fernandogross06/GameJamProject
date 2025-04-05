@@ -4952,6 +4952,11 @@ MonoBehaviour:
   inkTest: {fileID: 0}
   movement: {fileID: 198547305}
   cameraMovement: {fileID: 4054725581090808561}
+  textPrefab: {fileID: 0}
+  canvasTransform: {fileID: 0}
+  textureCanvas: {fileID: 0}
+  imagePrefab: {fileID: 0}
+  sceneController: {fileID: 0}
 --- !u!4 &1830058920
 Transform:
   m_ObjectHideFlags: 0
@@ -6026,6 +6031,10 @@ PrefabInstance:
     - target: {fileID: 2995984057520535504, guid: bc9f2634aa668524aae90057dabc43c3, type: 3}
       propertyPath: m_Name
       value: CameraManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263653912221006374, guid: bc9f2634aa668524aae90057dabc43c3, type: 3}
+      propertyPath: freeCamera
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4263653912221006374, guid: bc9f2634aa668524aae90057dabc43c3, type: 3}
       propertyPath: currentTarget

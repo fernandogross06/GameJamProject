@@ -27,7 +27,7 @@ public class inkTestingScript : MonoBehaviour
     void Start()
     {
         story = new Story(inkJson.text);
-
+        
         refreshUI();
         
         
@@ -36,10 +36,10 @@ public class inkTestingScript : MonoBehaviour
 
     }
 
-    public void Reset()
+    public void Reset(string parte = "PrimeraParte")
     {
         story = new Story(inkJson.text);
-
+        story.ChoosePathString(parte);
         refreshUI();
     }
 
@@ -61,11 +61,13 @@ public class inkTestingScript : MonoBehaviour
             string text = story.Continue();  // Continuar la historia
             refreshUI(text);  // Actualizar la UI con el nuevo texto
         }
+
     }
 
     public void refreshUI(string text = "")
     {
         eraseUI();
+        
         RectTransform panel = Instantiate(panelPrefab);
         RectTransform cajaBotones = Instantiate(cajaBotonesPrefab);
         RectTransform nameTag = Instantiate(nameTagPrefab);
@@ -98,7 +100,7 @@ public class inkTestingScript : MonoBehaviour
             Image talkingHead = Instantiate(imagePrefab) as Image;
             talkingHead.transform.SetParent(canvasTransform, false);
 
-            if (tags[0] == "Yukiko")
+            if (tags[0] == "A")
             {
                 talkingHead.sprite = sprites[0];
                 nameTagImage.color = new Color(203, 163, 0);
