@@ -67,11 +67,10 @@ public class gameManager : MonoBehaviour
                 
                 if (hit.collider.CompareTag("interact"))//Checking if the Raycast has hit a collider with the tag of note
                 {
-                    print("sirve");
-                    print(interacting);
+                  
 
                     interactText.text = "Presiona [I] para interactuar."; //Setting the Interaction Text to let the player know they are now hovering an interactable object
-                    print(interactText.text);
+                  
                     if (Input.GetKeyDown(KeyCode.I))//Check if the player has pressed the Interaction button
                     {
                         interacting = true;
