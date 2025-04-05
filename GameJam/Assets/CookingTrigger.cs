@@ -25,11 +25,12 @@ public class CookingTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(EventoActive y playerInRange){
 
-        //}
-        if (Input.GetKeyDown(KeyCode.Z) && playerInRange)
+        // CUANDO PRESIONE LA E, ESTÉ ACTIVO EL EVENTO DE COCINAR Y EL JUGADOR ESTÉ EN RANGO
+        // SE ACTIVA LA ESCENA
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && sceneSequenceManager.cookingSequence)
         {
+            sceneSequenceManager.cookingSequence = false;
             sceneSequenceManager.StartCookingSequence();
             //ActivateSequenceProps();
         }

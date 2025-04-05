@@ -26,7 +26,9 @@ public class CameraManager : MonoBehaviour
         if(new_index >=0 && new_index < cameraArray.Length) { 
             index_camera = new_index;
             currentCamera = cameraArray[index_camera];
-            freeCamera = (index_camera == 0);
+
+            // SI LA CAMARA ESTA EN 0, EL JUGADOR SE PUEDE MOVER
+            freeCamera = (index_camera == 0); 
         }
         return index_camera;
     }

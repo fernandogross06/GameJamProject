@@ -40,32 +40,47 @@ public class SceneSequenceManager : MonoBehaviour
     void StartIntroductionSequence()
     {
         // cameraManager.setCamera(1)
-        // Start SceneDialog
-        // cameraManager.setCamera(0)
-        // ActivateEventFlag
+
+        // Camera aiming at Female Character. Also disables player movement.
+        cameraManager.SwitchCamera(2);
+        cameraManager.currentTarget = femaleCharacter;
+
+        // Start SceneDialog #1
+
+        // ACÁ SE AGREGA EL DIALOGO
+
+
+
+        // Cuando termine, permitir cocinar
+
         cookingSequence = true;
+
+        // Camara en 0 para darle libertad al jugador y que vaya a la cocina.
+        cameraManager.SwitchCamera(0);
+
     }
 
     public void StartCookingSequence()
     {
-        // Cambiar la camara
-        // Desactivar el control del jugador
-        // kitchenTrigger.ActivateSequenceProbs
-        // wait 5 seconds
-        // kitchenTrigger.DeactivateSequenceProbs
+
         if(cameraManager == null)
         {
             Debug.Log("Could not find camera");
         }
+
+        // Cambiar la camara
+        // Desactivar el control del jugador
         cameraManager.currentTarget = kitchenFocus;
         cameraManager.SwitchCamera(1); // Kitchen camera. Also disables player movement.
+
+        // Activa los Props
         cookingTrigger.ActivateSequenceProps();
 
 
         // wait
         //cookingTrigger.DeactivateSequenceProps();
-        
 
+        // Espera 5 seconds mientras "cocina"
         Invoke("StartFirstCouchSequence", 2);
     }
 
@@ -73,20 +88,24 @@ public class SceneSequenceManager : MonoBehaviour
     void StartFirstCouchSequence()
     {
         cookingTrigger.DeactivateSequenceProps();
-        cookingSequence = false;
         // Fadein
 
         // Cambiar Camara
+        // Con cambiar la camara se desactiva el control del jugador
         cameraManager.SwitchCamera(2); // Kitchen camera. Also disables player movement.
+        cameraManager.currentTarget = femaleCharacter; // fijar en personaje femenino
 
-        // Desactivar el control del jugador
-        // Dialogo de desayuno
+        // Acá va el Dialogo de desayuno
 
-        // transform a modelo waifu
-        cameraManager.currentTarget = femaleCharacter;
-        // Fade-out
-        // sonido de comer
-        //cameraManager.currentTarget = femaleCharacter;
+
+
+
+        // FIN
+
+
+        // Fade-out y sonido de comer
+
+        
         Debug.Log("cameraManager.currentTarget = femaleCharacter;");
         StartLastCoachSequence();
     }
@@ -94,11 +113,21 @@ public class SceneSequenceManager : MonoBehaviour
     void StartLastCoachSequence()
     {
         // Fadein
+
         // Cambiar Camara // Para que sea más dinámico
         // Desactivar el control del jugador
-        // Dialogo de decoración
+        cameraManager.SwitchCamera(2); // Kitchen camera. Also disables player movement.
+        cameraManager.currentTarget = femaleCharacter; // fijar en personaje femenino
+
+
+        // Dialogo sobre decoración
+
+
+
+
         // fade-out
         // darle control al jugador (change camera to 0)
+        cameraManager.SwitchCamera(0);
         exitSequence = true;
     }
 
