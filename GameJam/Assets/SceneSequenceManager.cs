@@ -151,11 +151,12 @@ public class SceneSequenceManager : MonoBehaviour
 
 
         inkTest.enabled = true; // activa el script de dialogo
+        inkTest.Reset("SegundaParte");
         // yield return --> inkTest.Reset("SegundaParte"); //llama al dialogo correspondiente
 
         // TIENE QUE ESPERAR A QUE TERMINE EL DIALOGO
 
-
+        StartCoroutine(esperarFuncion());
 
 
         //while (dialogoActivo)
@@ -163,7 +164,7 @@ public class SceneSequenceManager : MonoBehaviour
         // sleep(1)
         //}
         Debug.Log("cameraManager.currentTarget = femaleCharacter;");
-        FadeInLastCoachSequencee();
+        //FadeInLastCoachSequencee();
     }
     void FadeInLastCoachSequencee()
     {
@@ -171,6 +172,17 @@ public class SceneSequenceManager : MonoBehaviour
         float tiempoEspera = duracionPantalla + tiempo + tiempo;
         Invoke("StartLastCoachSequence", tiempoEspera);
     }
+
+    IEnumerator esperarFuncion()
+    {
+        while (inkTest.enabled == true)
+        {
+            yield return null;
+        }
+        Debug.Log("cameraManager.currentTarget = femaleCharacter;");
+        FadeInLastCoachSequencee();
+    }
+
     void StartLastCoachSequence()
     {
         // Fadein
