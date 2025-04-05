@@ -19,7 +19,7 @@ public class CookingTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             //Debug.Log("Toqué al player");
             _textMeshPro.gameObject.SetActive(true);
@@ -27,7 +27,7 @@ public class CookingTrigger : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             //Debug.Log("Salió al player");
             _textMeshPro.gameObject.SetActive( false);
