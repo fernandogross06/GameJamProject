@@ -15,12 +15,13 @@ public class gameManager : MonoBehaviour
     bool interacting = false;
     public RawImage imagePrefab;
     RawImage rawImage;
+  
 
     private bool active = true;
 
     int parteHistoria = 0;
 
-    public SceneController sceneController;
+  
 
     void Start()
     {
@@ -52,10 +53,7 @@ public class gameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            sceneController.loadScene("escenaCiudad");
-        }
+     
 
         //rawImage.transform.SetAsFirstSibling();
 
@@ -141,6 +139,7 @@ public class gameManager : MonoBehaviour
 
     public void returnToGame()
     {
+       
         movement.enabled = true;
         inkTest.enabled = false;
         cameraMovement.enabled = true;

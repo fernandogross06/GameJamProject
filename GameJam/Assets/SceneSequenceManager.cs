@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using System.Collections;
+using TMPro;
+using UnityEngine.UI;
 
 public class SceneSequenceManager : MonoBehaviour
 {
@@ -22,7 +24,19 @@ public class SceneSequenceManager : MonoBehaviour
     public bool cookingSequence;
 
     public bool exitSequence;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    //Acceso al scripts de dialogo y movimiento
+    public inkTestingScript inkTest;
+    public PlayerCam cameraMovement;
+    public PlayerMovementTutorial movement;
+    bool cargado1 = false;
+
+    //Fade pantalla negra
+    public Image pantallaNegra;
+    public float tiempo;
+    public int duracionPantalla;
+
+
     void Awake()
     {
         cameraManager = cameraManagerGO.GetComponent<CameraManager>();
@@ -35,7 +49,19 @@ public class SceneSequenceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!cargado1)//Por alguna razon el primer dialogo no carga sino se llama por lo menos una vez mas asi que hice una condicional
+        {
+            inkTest.enabled = true;
+            inkTest.Reset("PrimeraParte");
+            cargado1 = true;
+        }
+    }
+
+    private void Start()
+    {
+       StartIntroductionSequence();
         
+
     }
     void StartIntroductionSequence()
     {
@@ -49,7 +75,20 @@ public class SceneSequenceManager : MonoBehaviour
 
         // ACÁ SE AGREGA EL DIALOGO
 
+        print("sirve StartIntroductionSequence");
 
+        //Modificar a preferencia
+        movement.enabled = false;  //desactiva el movimiento
+        cameraMovement.enabled = false; // desactiva el movimiento de la camara
+        Cursor.lockState = CursorLockMode.None; //activa el cursor
+        Cursor.visible = true; //hace visible al cursor
+
+
+        inkTest.enabled = true; // activa el script de dialogo
+        inkTest.Reset("PrimeraParte"); //llama al dialogo correspondiente
+
+
+       
 
         // Cuando termine, permitir cocinar
 
@@ -76,7 +115,7 @@ public class SceneSequenceManager : MonoBehaviour
         // Activa los Props
         cookingTrigger.ActivateSequenceProps();
 
-
+        print("sirve StartCookingSequence");
         // wait
         //cookingTrigger.DeactivateSequenceProps();
 
@@ -90,6 +129,10 @@ public class SceneSequenceManager : MonoBehaviour
         cookingTrigger.DeactivateSequenceProps();
         // Fadein
 
+        //Funcion que hace un fade in y un fade out de una pantalla negra a voluntad
+        //Se puede parametrizar el tiempo de transicion y la duracion de la pantalla negra
+        StartCoroutine(fadeScreen()); 
+
         // Cambiar Camara
         // Con cambiar la camara se desactiva el control del jugador
         cameraManager.SwitchCamera(2); // Kitchen camera. Also disables player movement.
@@ -97,16 +140,26 @@ public class SceneSequenceManager : MonoBehaviour
 
         // Acá va el Dialogo de desayuno
 
+        print("sirve StartFirstCouchSequence");
+
+        //Modificar a preferencia
+        Cursor.lockState = CursorLockMode.None; //activa el cursor
+        Cursor.visible = true; //hace visible al cursor
 
 
+        inkTest.enabled = true; // activa el script de dialogo
+        inkTest.Reset("SegundaParte"); //llama al dialogo correspondiente
 
+        //Como se llama a StartLastCoachSequence() aqui adentro entonces no da tiempo de aparecer al dialogo, pero si aparece
         // FIN
 
 
         // Fade-out y sonido de comer
+        StartCoroutine(fadeScreen());
 
-        
-        Debug.Log("cameraManager.currentTarget = femaleCharacter;");
+
+
+       Debug.Log("cameraManager.currentTarget = femaleCharacter;");
         StartLastCoachSequence();
     }
 
@@ -123,13 +176,88 @@ public class SceneSequenceManager : MonoBehaviour
         // Dialogo sobre decoración
 
 
+        print("sirve StartLastCoachSequence");
 
+        //Modificar a preferencia
+        movement.enabled = false;  //desactiva el movimiento
+        cameraMovement.enabled = false; // desactiva el movimiento de la camara
+        Cursor.lockState = CursorLockMode.None; //activa el cursor
+        Cursor.visible = true; //hace visible al cursor
+
+
+        inkTest.enabled = true; // activa el script de dialogo
+        inkTest.Reset("TerceraParte"); //llama al dialogo correspondiente
 
         // fade-out
         // darle control al jugador (change camera to 0)
         cameraManager.SwitchCamera(0);
         exitSequence = true;
     }
+
+
+    public IEnumerator fadeScreen()
+    {
+
+        //float elapsedTime = 0f;
+
+        Color StartColor = new Color(pantallaNegra.color.r, pantallaNegra.color.g, pantallaNegra.color.b, 0);
+        Color TargetColor = new Color(pantallaNegra.color.r, pantallaNegra.color.g, pantallaNegra.color.b, 1);
+
+        pantallaNegra.gameObject.SetActive(true);
+
+        float elapsedTime = 0;
+
+        float elapsedPercentage = 0;
+        while (elapsedPercentage < 1)
+        {
+            elapsedPercentage = elapsedTime / tiempo;
+
+
+            pantallaNegra.color = Color.Lerp(StartColor, TargetColor, elapsedPercentage);
+
+
+
+            yield return null;
+            elapsedTime += Time.deltaTime;
+        }
+
+        StartColor = new Color(pantallaNegra.color.r, pantallaNegra.color.g, pantallaNegra.color.b, 1);
+        TargetColor = new Color(pantallaNegra.color.r, pantallaNegra.color.g, pantallaNegra.color.b, 0);
+
+        elapsedTime = 0;
+        while (elapsedTime < duracionPantalla)
+        {
+
+            //print(elapsedTime);
+
+            elapsedTime += Time.deltaTime;
+
+
+            yield return null;  // Esperar hasta el siguiente frame
+        }
+
+        elapsedTime = 0;
+        elapsedPercentage = 0;
+        while (elapsedPercentage < 1)
+        {
+            elapsedPercentage = elapsedTime / tiempo;
+
+
+            pantallaNegra.color = Color.Lerp(StartColor, TargetColor, elapsedPercentage);
+
+
+
+            yield return null;
+            elapsedTime += Time.deltaTime;
+        }
+
+        pantallaNegra.gameObject.SetActive(false);
+
+
+
+    }
+
+  
 
 
 }

@@ -40,6 +40,7 @@ public class inkTestingScript : MonoBehaviour
     {
         story = new Story(inkJson.text);
         story.ChoosePathString(parte);
+        print(parte);
         refreshUI();
     }
 
@@ -48,6 +49,7 @@ public class inkTestingScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
+            print("sirve N");
             LoadNextStoryChunk();  // Cargar la siguiente línea cuando se presiona la tecla N
         }
     }
