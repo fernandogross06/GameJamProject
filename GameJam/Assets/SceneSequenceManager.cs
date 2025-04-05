@@ -28,7 +28,7 @@ public class SceneSequenceManager : MonoBehaviour
         cameraManager = cameraManagerGO.GetComponent<CameraManager>();
         cookingTrigger = cookingTriggerGO.GetComponent<CookingTrigger>();
 
-        cookingSequence = false;
+        cookingSequence = true; // CAMBIAR LUEGO
         exitSequence = false;
     }
 
