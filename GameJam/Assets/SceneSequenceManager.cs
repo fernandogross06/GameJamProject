@@ -51,15 +51,16 @@ public class SceneSequenceManager : MonoBehaviour
     {
         if (!cargado1)//Por alguna razon el primer dialogo no carga sino se llama por lo menos una vez mas asi que hice una condicional
         {
-            inkTest.enabled = true;
-            inkTest.Reset("PrimeraParte");
+            //inkTest.enabled = true;
+            //inkTest.Reset("PrimeraParte");
+            StartIntroductionSequence();
             cargado1 = true;
         }
     }
 
     private void Start()
     {
-       StartIntroductionSequence();
+
         
 
     }
@@ -78,8 +79,8 @@ public class SceneSequenceManager : MonoBehaviour
         print("sirve StartIntroductionSequence");
 
         //Modificar a preferencia
-        movement.enabled = false;  //desactiva el movimiento
-        cameraMovement.enabled = false; // desactiva el movimiento de la camara
+        //movement.enabled = false;  //desactiva el movimiento
+        //cameraMovement.enabled = false; // desactiva el movimiento de la camara
         Cursor.lockState = CursorLockMode.None; //activa el cursor
         Cursor.visible = true; //hace visible al cursor
 
@@ -88,14 +89,11 @@ public class SceneSequenceManager : MonoBehaviour
         inkTest.Reset("PrimeraParte"); //llama al dialogo correspondiente
 
 
-       
-
         // Cuando termine, permitir cocinar
 
         cookingSequence = true;
 
         // Camara en 0 para darle libertad al jugador y que vaya a la cocina.
-        cameraManager.SwitchCamera(0);
 
     }
 
@@ -120,10 +118,15 @@ public class SceneSequenceManager : MonoBehaviour
         //cookingTrigger.DeactivateSequenceProps();
 
         // Espera 5 seconds mientras "cocina"
-        Invoke("StartFirstCouchSequence", 2);
+        Invoke("FadeInCouchSequence", 2);
     }
 
-
+    void FadeInCouchSequence()
+    {
+        StartCoroutine(fadeScreen());
+        float tiempoEspera = duracionPantalla + tiempo;
+        Invoke("StartFirstCouchSequence", tiempoEspera);
+    }
     void StartFirstCouchSequence()
     {
         cookingTrigger.DeactivateSequenceProps();
@@ -131,7 +134,7 @@ public class SceneSequenceManager : MonoBehaviour
 
         //Funcion que hace un fade in y un fade out de una pantalla negra a voluntad
         //Se puede parametrizar el tiempo de transicion y la duracion de la pantalla negra
-        StartCoroutine(fadeScreen()); 
+       
 
         // Cambiar Camara
         // Con cambiar la camara se desactiva el control del jugador
@@ -148,21 +151,26 @@ public class SceneSequenceManager : MonoBehaviour
 
 
         inkTest.enabled = true; // activa el script de dialogo
-        inkTest.Reset("SegundaParte"); //llama al dialogo correspondiente
+        // yield return --> inkTest.Reset("SegundaParte"); //llama al dialogo correspondiente
 
-        //Como se llama a StartLastCoachSequence() aqui adentro entonces no da tiempo de aparecer al dialogo, pero si aparece
-        // FIN
-
-
-        // Fade-out y sonido de comer
-        StartCoroutine(fadeScreen());
+        // TIENE QUE ESPERAR A QUE TERMINE EL DIALOGO
 
 
 
-       Debug.Log("cameraManager.currentTarget = femaleCharacter;");
-        StartLastCoachSequence();
+
+        //while (dialogoActivo)
+        //{
+        // sleep(1)
+        //}
+        Debug.Log("cameraManager.currentTarget = femaleCharacter;");
+        FadeInLastCoachSequencee();
     }
-
+    void FadeInLastCoachSequencee()
+    {
+        StartCoroutine(fadeScreen());
+        float tiempoEspera = duracionPantalla + tiempo + tiempo;
+        Invoke("StartLastCoachSequence", tiempoEspera);
+    }
     void StartLastCoachSequence()
     {
         // Fadein
@@ -179,8 +187,6 @@ public class SceneSequenceManager : MonoBehaviour
         print("sirve StartLastCoachSequence");
 
         //Modificar a preferencia
-        movement.enabled = false;  //desactiva el movimiento
-        cameraMovement.enabled = false; // desactiva el movimiento de la camara
         Cursor.lockState = CursorLockMode.None; //activa el cursor
         Cursor.visible = true; //hace visible al cursor
 
@@ -190,14 +196,13 @@ public class SceneSequenceManager : MonoBehaviour
 
         // fade-out
         // darle control al jugador (change camera to 0)
-        cameraManager.SwitchCamera(0);
         exitSequence = true;
     }
 
 
     public IEnumerator fadeScreen()
     {
-
+        // Pasar tiempo por parámetro
         //float elapsedTime = 0f;
 
         Color StartColor = new Color(pantallaNegra.color.r, pantallaNegra.color.g, pantallaNegra.color.b, 0);

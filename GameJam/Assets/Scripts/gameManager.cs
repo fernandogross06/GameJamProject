@@ -6,6 +6,8 @@ public class gameManager : MonoBehaviour
 {
     public inkTestingScript inkTest;
     public PlayerMovementTutorial movement;
+    public GameObject cameraManagerGO;
+    CameraManager cameraManager;
     public PlayerCam  cameraMovement;
     float raycastDistance = 5; //Adjust to suit your use case
     public TextMeshProUGUI textPrefab;
@@ -29,6 +31,7 @@ public class gameManager : MonoBehaviour
         inkTest.enabled = false;
         interactText = Instantiate(textPrefab) as TextMeshProUGUI;
         rawImage = Instantiate(imagePrefab) as RawImage;
+        cameraManager = cameraManagerGO.GetComponent<CameraManager>();
     }
 
     // Update is called once per frame
@@ -139,13 +142,14 @@ public class gameManager : MonoBehaviour
     public void returnToGame()
     {
        
-        movement.enabled = true;
+        //movement.enabled = true;
         inkTest.enabled = false;
-        cameraMovement.enabled = true;
+        //cameraMovement.enabled = true;
 
         interacting = false;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        cameraManager.SwitchCamera(0);
     }
 }
