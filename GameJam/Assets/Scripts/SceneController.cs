@@ -1,13 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class SceneController : MonoBehaviour
 {
     [SerializeField]
     private float sceneFadeDuration;
     [SerializeField]
     private float blackScreenDuration;
-
+    
     
     private SceneFade sceneFade;
 
