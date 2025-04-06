@@ -106,13 +106,32 @@ public class inkTestingScript : MonoBehaviour
             {
                 talkingHead.sprite = sprites[0];
                 nameTagImage.color = new Color(203, 163, 0);
-                textComponent.text = "Placeholder";
+                textComponent.text = "Ana";
             }
             if (tags[0] == "A2")
             {
                 talkingHead.sprite = sprites[1];
                 nameTagImage.color = new Color(203, 163, 0);
-                textComponent.text = "Placeholder";
+                textComponent.text = "Ana";
+            }
+            if (tags[0] == "T")
+            {
+                //talkingHead.sprite = sprites[1];
+                nameTagImage.color = new Color(203, 163, 0);
+                textComponent.text = "Noticias";
+            }
+            if (tags[0] == "M")
+            {
+               // talkingHead.sprite = sprites[1];
+                nameTagImage.color = new Color(203, 163, 0);
+                textComponent.text = "Monstruo";
+            }
+
+            if (tags[0] == "V")
+            {
+                // talkingHead.sprite = sprites[1];
+                nameTagImage.color = new Color(203, 163, 0);
+                textComponent.text = "Vendedor";
             }
 
 

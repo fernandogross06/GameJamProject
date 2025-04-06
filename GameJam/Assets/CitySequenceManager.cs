@@ -80,7 +80,7 @@ public class CitySequenceManager : MonoBehaviour
 
         // ACÁ SE AGREGA EL DIALOGO
 
-        print("sirve StartIntroductionSequence");
+       
 
         //Modificar a preferencia
         //movement.enabled = false;  //desactiva el movimiento
