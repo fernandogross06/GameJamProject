@@ -1298,10 +1298,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2446,10 +2446,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2648,7 +2648,10 @@ MonoBehaviour:
   canvasTransform: {fileID: 674826861}
   imagePrefab: {fileID: 1025313466089626741, guid: 3dfa1c6d5c443c843a0bbb46c7e80e29, type: 3}
   sprites:
-  - {fileID: 21300000, guid: bdcb03f28a62b19489f884bbd412e0f0, type: 3}
+  - {fileID: 21300000, guid: b36f3eb83785e9044bfd074ba763fd83, type: 3}
+  - {fileID: 21300000, guid: 743ed982fb2e7ab459373e0da08b0a31, type: 3}
+  - {fileID: 21300000, guid: e7331a01387524544bc528d4ee4c3b31, type: 3}
+  - {fileID: 21300000, guid: 8c954e6a7974e5b4481141206c29b6cf, type: 3}
   gameManager: {fileID: 1830058919}
 --- !u!114 &674826858
 MonoBehaviour:
@@ -2679,10 +2682,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -16439,6 +16442,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594953805}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1597548802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7628969953448420829, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
+  m_PrefabInstance: {fileID: 4547548414140844526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1597548808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597548802}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 1, z: 1.0000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1601648657
 GameObject:
   m_ObjectHideFlags: 0
@@ -22204,6 +22233,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1655818645329919994, guid: 0c262470468fe9741bdfe25ffbbc21d8, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655818645329919994, guid: 0c262470468fe9741bdfe25ffbbc21d8, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655818645329919994, guid: 0c262470468fe9741bdfe25ffbbc21d8, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 7080731433000425381, guid: 0c262470468fe9741bdfe25ffbbc21d8, type: 3}
       propertyPath: m_Name
       value: 'SceneController '
@@ -22290,6 +22331,10 @@ MonoBehaviour:
   canvasTransform: {fileID: 643868493}
   textureCanvas: {fileID: 196328961}
   imagePrefab: {fileID: 3786581549280753128, guid: 0bdb79b6fe122c041ab91dd390ba2b8e, type: 3}
+  BGM:
+  - {fileID: 8300000, guid: 1660471c17e146a408e1c22757c98e31, type: 3}
+  - {fileID: 8300000, guid: bfbeb0fe2e93a784ebcbf2ce8617968d, type: 3}
+  - {fileID: 8300000, guid: 9b1ffca0eade87d4ba9947c11c5fb8d3, type: 3}
 --- !u!4 &1830058920
 Transform:
   m_ObjectHideFlags: 0
@@ -24086,6 +24131,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: KitchenCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7889618939549882090, guid: 8e3462733b4b95946842c581953fa1cb, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7889618939549882090, guid: 8e3462733b4b95946842c581953fa1cb, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7889618939549882090, guid: 8e3462733b4b95946842c581953fa1cb, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24399,10 +24456,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1399490486316366815, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
+      propertyPath: m_Size.z
+      value: 4.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399490486316366815, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399490486316366815, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
+      propertyPath: m_Center.z
+      value: -2.03
+      objectReference: {fileID: 0}
     - target: {fileID: 6107010885060891320, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
       propertyPath: doorText
       value: 
       objectReference: {fileID: 1656391682}
+    - target: {fileID: 6107010885060891320, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
+      propertyPath: sceneName
+      value: escenaCiudad
+      objectReference: {fileID: 0}
     - target: {fileID: 6107010885060891320, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
       propertyPath: sceneController
       value: 
@@ -24454,7 +24527,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7628969953448420829, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1597548808}
   m_SourcePrefab: {fileID: 100100000, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
 --- !u!1 &4610222717607327263
 GameObject:
@@ -25869,6 +25945,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2999753706050805019, guid: d612d9f2ea681e34b98b2bd1bee9799b, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999753706050805019, guid: d612d9f2ea681e34b98b2bd1bee9799b, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999753706050805019, guid: d612d9f2ea681e34b98b2bd1bee9799b, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 6201856599181059188, guid: d612d9f2ea681e34b98b2bd1bee9799b, type: 3}
       propertyPath: m_Name
       value: PantallaNegraFade

@@ -20,6 +20,7 @@ public class SFXScript : MonoBehaviour
         source.clip = clipSFX;
         source.volume = volumen;
         source.Play();
+        source.loop = true;
         float largoClip;
         if (setLargo)
         {
@@ -33,7 +34,7 @@ public class SFXScript : MonoBehaviour
 
 
 
-        Destroy(source.gameObject, largoClip);
+        //Destroy(source.gameObject, largoClip);
     }
 
     public void loopClip(AudioClip clipSFX, Transform spawn, float volumen)

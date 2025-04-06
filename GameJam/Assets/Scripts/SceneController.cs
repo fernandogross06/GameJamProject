@@ -32,6 +32,8 @@ public class SceneController : MonoBehaviour
     private IEnumerator loadSceneCoroutine(string sceneName)
     {
         yield return sceneFade.FadeOutCoroutine(sceneFadeDuration, blackScreenDuration);
+
+       
         yield return SceneManager.LoadSceneAsync(sceneName);
     }
 }

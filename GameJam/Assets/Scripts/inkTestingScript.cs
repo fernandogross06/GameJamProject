@@ -102,11 +102,17 @@ public class inkTestingScript : MonoBehaviour
             Image talkingHead = Instantiate(imagePrefab) as Image;
             talkingHead.transform.SetParent(canvasTransform, false);
 
-            if (tags[0] == "A")
+            if (tags[0] == "A1")
             {
                 talkingHead.sprite = sprites[0];
                 nameTagImage.color = new Color(203, 163, 0);
-                textComponent.text = tags[0];
+                textComponent.text = "Placeholder";
+            }
+            if (tags[0] == "A2")
+            {
+                talkingHead.sprite = sprites[1];
+                nameTagImage.color = new Color(203, 163, 0);
+                textComponent.text = "Placeholder";
             }
 
 

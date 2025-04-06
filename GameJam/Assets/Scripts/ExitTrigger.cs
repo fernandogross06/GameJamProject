@@ -7,7 +7,7 @@ public class ExitTrigger : MonoBehaviour
     public TextMeshProUGUI doorText;
     private bool playerInRange;
     public SceneController sceneController;
-
+    [SerializeField] string sceneName;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +21,7 @@ public class ExitTrigger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
            
-            sceneController.loadScene("escenaCiudad");
+            sceneController.loadScene(sceneName);
             //ActivateSequenceProps();
         }
         
