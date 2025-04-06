@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     /*public void EscenaJuego()
     {
-        SceneManager.LoadScene("Empezar el juego"); //Cambiar eso por la primera escena del juego
+        SceneManager.LoadScene("escenaApartamentoDecorada"); //Cambiar eso por la primera escena del juego
     }*/
 
     public void Salir()

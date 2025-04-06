@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 208}
+  m_AnchoredPosition: {x: 0, y: -351}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &91848339
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 208868979}
   - component: {fileID: 208868978}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: Creditos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\n\n\n\n\nT\xEDtulo del Juego"
+  m_Text: "\n\n\n\n\n\n\xBFQui\xE9n es usted?"
 --- !u!222 &208868979
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 873413694}
   - component: {fileID: 873413693}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: TituloJuego
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +343,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\n\n\n\n\n\n\n\n\n\n\n\nDesarrollo\nProgramaci\xF3n\n\nRichard Araya Padilla\nFernando
     Gross Hern\xE1ndez\nKevin Carranza Jim\xE9nez\n\nArte\n\nJoss\nCamilo\n\nTecnolog\xEDa\n\nMotor
-    de juego: Unity 6\n\n\n\n\n\n\n\n\n"
+    de juego: Unity 6\n\nLicencias\nAudio\n\nDELOSound\n\nModelos 3D\nbyzmod3d\nbl4st\n\n\n\n\n\n\n\n"
 --- !u!222 &873413694
 CanvasRenderer:
   m_ObjectHideFlags: 0
