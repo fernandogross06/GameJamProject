@@ -47,7 +47,7 @@ public class inkTestingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
         {
           
             LoadNextStoryChunk();  // Cargar la siguiente línea cuando se presiona la tecla N
@@ -112,7 +112,11 @@ public class inkTestingScript : MonoBehaviour
 
             if (tags[0] == "final")
             {
-                gameManager.returnToGame();
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+                {
+
+                    gameManager.returnToGame();
+                }
             }
 
 

@@ -84,6 +84,6 @@ Si no me voy ya me van a regañar luego
 
 
 ==Fin==
-* [Salir]
+
     #final
     -> END
