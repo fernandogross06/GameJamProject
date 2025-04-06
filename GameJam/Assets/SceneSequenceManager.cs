@@ -121,7 +121,7 @@ public class SceneSequenceManager : MonoBehaviour
         //cookingTrigger.DeactivateSequenceProps();
 
         // Espera 5 seconds mientras "cocina"
-        Invoke("FadeInCouchSequence", 2);
+        Invoke("FadeInCouchSequence", 5);
     }
 
     void FadeInCouchSequence()
@@ -172,7 +172,7 @@ public class SceneSequenceManager : MonoBehaviour
     void FadeInLastCoachSequencee()
     {
         StartCoroutine(fadeScreen());
-        float tiempoEspera = duracionPantalla + tiempo + tiempo;
+        float tiempoEspera = duracionPantalla + tiempo;
         Invoke("StartLastCoachSequence", tiempoEspera);
     }
 
