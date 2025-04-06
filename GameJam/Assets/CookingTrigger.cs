@@ -42,7 +42,7 @@ public class CookingTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && sceneSequenceManager.cookingSequence)
         {
             //Debug.Log("Toqué al player");
             _textMeshPro.gameObject.SetActive(true);
