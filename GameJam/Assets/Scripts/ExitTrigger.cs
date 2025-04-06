@@ -20,7 +20,7 @@ public class ExitTrigger : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
-           
+            SFXScript.instance.stopClip();
             sceneController.loadScene(sceneName);
             //ActivateSequenceProps();
         }
