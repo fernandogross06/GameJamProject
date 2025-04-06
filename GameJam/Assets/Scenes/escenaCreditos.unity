@@ -149,8 +149,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 873413692}
   - {fileID: 208868977}
+  - {fileID: 873413692}
   m_Father: {fileID: 1779666175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 208868979}
   - component: {fileID: 208868978}
   m_Layer: 5
-  m_Name: Creditos
+  m_Name: TituloJuego
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 873413694}
   - component: {fileID: 873413693}
   m_Layer: 5
-  m_Name: TituloJuego
+  m_Name: Creditos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,8 +305,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1}
-  m_SizeDelta: {x: 699.9999, y: 944.09}
+  m_AnchoredPosition: {x: 0, y: -347.4768}
+  m_SizeDelta: {x: 699.9999, y: 1641.0437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873413693
 MonoBehaviour:
@@ -330,10 +330,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d7cffddcbc0cc8f4ebe6e28eb9804082, type: 3}
-    m_FontSize: 20
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -341,9 +341,23 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\n\n\n\n\n\n\n\n\n\n\nDesarrollo\nProgramaci\xF3n\n\nRichard Araya Padilla\nFernando
-    Gross Hern\xE1ndez\nKevin Carranza Jim\xE9nez\n\nArte\n\nJoss\nCamilo\n\nTecnolog\xEDa\n\nMotor
-    de juego: Unity 6\n\nLicencias\nAudio\n\nDELOSound\n\nModelos 3D\nbyzmod3d\nbl4st\n\n\n\n\n\n\n\n"
+  m_Text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\nRichard Araya - Programaci\xF3n y creaci\xF3n
+    de escenas\r\nKevin Carranza - Programaci\xF3n y creaci\xF3n de men\xFAs\r\nFernando
+    Gross - Programaci\xF3n y creaci\xF3n de interfaz\r\nLethargic Moth - Arte y
+    creaci\xF3n de sprites\r\n\r\nAssets utilizados\r\nMusica\r\n\r\nMen\xFA:\r\nHorror
+    Suspense Tension - DELOSound\r\n\r\nEscena Inicial:\r\n\r\nOnce Again by Moavii\r\nFree
+    To Use\r\nMusic promoted by free-stock-music\r\n\r\nEscena Ciudad:\r\n\r\nCity
+    Life by Artificial.Music\r\nMusic promoted by free-stock-music.com\r\nCreative
+    Commons / Attribution 3.0 Unported License (CC BY 3.0)\r\n\r\nEscena final:\r\n\r\nSpooky
+    Ambience by Sound Effects Library\r\nMusic promoted by free-stock-music \r\nCreative
+    Commons / CC0 1.0 Universal - Public Domain Dedication (CCO 1.0)\r\n\r\nCr\xE9ditos:\r\nSuspense
+    Horror Tension - DELOSound\r\n\r\nModelos\r\n\r\nbysmod3d on opengameart\r\nHUMAN
+    LOW POLY FEMALE GIRL\r\n\r\nemanue-paleo\r\nLowPoly Decorations\r\n\r\nAltrainfinite\r\nHome
+    Electronics - Asset\r\n\r\nAsset Store Unity\r\nLow Poly Kitchen Set\r\nLow Poly
+    Simple Furniture FREE\r\nLowpoly Flowers\r\nLowpoly Modern City Buildings Set\r\nLowpoly
+    Modern City Decorations Set\r\nMimic prototype\r\n\r\nTecnolog\xEDa\nMotor de
+    juego: Unity 6 3D\n\nOtro\r\n\r\nInk Integration for Unity\r\nFREE Skybox Extended
+    Shader"
 --- !u!222 &873413694
 CanvasRenderer:
   m_ObjectHideFlags: 0
