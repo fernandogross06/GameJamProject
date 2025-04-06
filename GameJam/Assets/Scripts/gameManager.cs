@@ -34,7 +34,7 @@ public class gameManager : MonoBehaviour
         interactText = Instantiate(textPrefab) as TextMeshProUGUI;
        // rawImage = Instantiate(imagePrefab) as RawImage;
         cameraManager = cameraManagerGO.GetComponent<CameraManager>();
-        SFXScript.instance.loopClip(BGM[0], transform, 1f);
+        SFXScript.instance.loopClip(BGM[0], transform, 0.5f);
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class gameManager : MonoBehaviour
         {
          
 
-            SFXScript.instance.loopClip(BGM[1], transform, 1f);  
+            SFXScript.instance.loopClip(BGM[1], transform, 0.2f);  
         }
 
 
