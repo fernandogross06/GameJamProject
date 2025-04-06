@@ -99,20 +99,42 @@ public class inkTestingScript : MonoBehaviour
 
         if(tags.Count > 0)
         {
-            Image talkingHead = Instantiate(imagePrefab) as Image;
-            talkingHead.transform.SetParent(canvasTransform, false);
+            
 
             if (tags[0] == "A1")
             {
+                Image talkingHead = Instantiate(imagePrefab) as Image;
+                talkingHead.transform.SetParent(canvasTransform, false);
                 talkingHead.sprite = sprites[0];
                 nameTagImage.color = new Color(203, 163, 0);
-                textComponent.text = "Placeholder";
+                textComponent.text = "Ana";
             }
             if (tags[0] == "A2")
             {
+                Image talkingHead = Instantiate(imagePrefab) as Image;
+                talkingHead.transform.SetParent(canvasTransform, false);
                 talkingHead.sprite = sprites[1];
                 nameTagImage.color = new Color(203, 163, 0);
-                textComponent.text = "Placeholder";
+                textComponent.text = "Ana";
+            }
+            if (tags[0] == "T")
+            {
+                //talkingHead.sprite = sprites[1];
+                nameTagImage.color = new Color(30f / 255f, 45f / 255f, 99f / 255f);
+                textComponent.text = "Noticias";
+            }
+            if (tags[0] == "M")
+            {
+               // talkingHead.sprite = sprites[1];
+                nameTagImage.color = new Color(105f / 255f, 18f / 255f, 39f / 255f);
+                textComponent.text = "Monstruo";
+            }
+
+            if (tags[0] == "V")
+            {
+                // talkingHead.sprite = sprites[1];
+                nameTagImage.color = new Color(64f / 255f, 107f / 255f, 0f / 255f);
+                textComponent.text = "Vendedor";
             }
 
 
