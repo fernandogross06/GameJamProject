@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1852600249463522873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3791140548162048359}
+  - component: {fileID: 3879241956649659788}
+  m_Layer: 0
+  m_Name: SceneSequenceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3791140548162048359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852600249463522873}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.289684, y: 2.2959986, z: 6.516193}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3879241956649659788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852600249463522873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3edabb9e75acc1e408b1a86f9c982f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraManagerGO: {fileID: 0}
+  femaleCharacter: {fileID: 0}
+  kitchenFocus: {fileID: 0}
+  cookingTriggerGO: {fileID: 0}
+  cookingSequence: 0
+  exitSequence: 0
+  inkTest: {fileID: 0}
+  cameraMovement: {fileID: 0}
+  movement: {fileID: 0}
+  pantallaNegra: {fileID: 0}
+  tiempo: 1
+  duracionPantalla: 3

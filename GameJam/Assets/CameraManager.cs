@@ -13,7 +13,7 @@ public class CameraManager : MonoBehaviour
     {
         index_camera =  0;
         currentCamera = cameraArray[index_camera];
-        freeCamera = false;
+        //freeCamera = false;
     }
 
     // Update is called once per frame
