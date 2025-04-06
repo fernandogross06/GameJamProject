@@ -160,13 +160,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
   m_Name: LiftGammaGain
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   lift:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {x: 0.9686334, y: 0.9705622, z: 1, w: 0}
   gamma:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 0.91705084, z: 0.91289556, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 0.8623685, y: 0.9130505, z: 1, w: 0}
   gain:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 0.9646291, z: 0.85851663, w: 0}
+    m_Value: {x: 0.9859039, y: 0.9970293, z: 1, w: 0}
