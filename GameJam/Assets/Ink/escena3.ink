@@ -27,8 +27,10 @@ Las autoridades todavía están investigando los detalles del incidente y la ide
 ->Fin
 
 ==CuartaParte==
-¡ANA!
+¡ANA! 
+
 …#A1
+
 Me tenía preocupado. Acabo de ver en las noticias que apareció una muchacha muerta y… No, no. No es nada.
 
 ¿Cómo le fue en el trabajo?
@@ -101,6 +103,8 @@ Estoy… cansado. Vamos a dormir, Ana.
 
 ==OctavaParte==
 Vamos.#A1
+
+Tambien estoy cansada.#A2
 
 ->Fin
 

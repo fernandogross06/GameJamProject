@@ -14,15 +14,15 @@ Muchas gracias, salen en 5 mil cada una. #V
 
 ==TerceraParte==
 ¡Oh!
-<I>Esta me recuerda a Ana.</I>
-Me llevo la -roja-
+\-Esta me recuerda a Ana.-
+Me llevo la roja
 
 5 mil. ¡Muchas gracias!#V
 ->Fin
 
 ==CuartaParte==
-<I>Espero que le guste a Ana.</I>
-<I>Hora de volver.</I>
+\-Espero que le guste a Ana.-
+\-Hora de volver.-
 ->Fin
 
 ==Fin==
