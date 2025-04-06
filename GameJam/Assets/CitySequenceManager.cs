@@ -52,14 +52,14 @@ public class CitySequenceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (!cargado1)//Por alguna razon el primer dialogo no carga sino se llama por lo menos una vez mas asi que hice una condicional
+        if (!cargado1)//Por alguna razon el primer dialogo no carga sino se llama por lo menos una vez mas asi que hice una condicional
         {
             //inkTest.enabled = true;
             //inkTest.Reset("PrimeraParte");
-            StartIntroductionSequence();
+            StartShoppingSequence();
             cargado1 = true;
         }
-        */
+        
     }
 
     private void Start()
@@ -73,7 +73,7 @@ public class CitySequenceManager : MonoBehaviour
         // cameraManager.setCamera(1)
 
         // Camera aiming at Female Character. Also disables player movement.
-        cameraManager.SwitchCamera(1);
+        cameraManager.SwitchCamera(2);
         cameraManager.currentTarget = femaleCharacter;
 
         // Start SceneDialog #1
@@ -101,7 +101,56 @@ public class CitySequenceManager : MonoBehaviour
 
     }
 
-   
+    public void ShoppingSequence(int dialogo)
+    {
+        // cameraManager.setCamera(1)
+
+        // Camera aiming at Female Character. Also disables player movement.
+        cameraManager.SwitchCamera(1);
+        cameraManager.currentTarget = femaleCharacter;
+
+        // Start SceneDialog #1
+
+        // ACÁ SE AGREGA EL DIALOGO
+
+
+
+        //Modificar a preferencia
+        //movement.enabled = false;  //desactiva el movimiento
+        //cameraMovement.enabled = false; // desactiva el movimiento de la camara
+        Cursor.lockState = CursorLockMode.None; //activa el cursor
+        Cursor.visible = true; //hace visible al cursor
+
+
+        inkTest.enabled = true; // activa el script de dialogo
+        if(dialogo == 0)
+        {
+            inkTest.Reset("PrimeraParte"); //llama al dialogo correspondiente
+        }
+        if (dialogo == 1)
+        {
+            inkTest.Reset("SegundaParte"); //llama al dialogo correspondiente
+        }
+        if (dialogo == 2)
+        {
+            inkTest.Reset("TerceraParte"); //llama al dialogo correspondiente
+        }
+        if (dialogo == 3)
+        {
+            inkTest.Reset("CuartaParte"); //llama al dialogo correspondiente
+        }
+
+
+
+        // Cuando termine, permitir cocinar
+
+        shopReady = true;
+
+        // Camara en 0 para darle libertad al jugador y que vaya a la cocina.
+
+    }
+
+
     void FadeInLastCoachSequencee()
     {
         StartCoroutine(fadeScreen());

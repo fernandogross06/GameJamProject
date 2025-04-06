@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -11,6 +12,8 @@ public class ShopTrigger : MonoBehaviour
     public TextMeshProUGUI _textMeshPro;
     private bool playerInRange;
     public GameObject[] sceneProps;
+
+    int dialogos = 0;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,7 +36,24 @@ public class ShopTrigger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && playerInRange )
         {
             //sceneSequenceManager.cookingSequence = false;
-            citySequenceManager.StartShoppingSequence();
+           
+            if(dialogos == 0)
+            {
+                citySequenceManager.ShoppingSequence(0);
+            }
+            if (dialogos == 1)
+            {
+                citySequenceManager.ShoppingSequence(1);
+            }
+            if (dialogos == 2)
+            {
+                citySequenceManager.ShoppingSequence(2);
+            }
+            if (dialogos == 3)
+            {
+                citySequenceManager.ShoppingSequence(3);
+            }
+            dialogos++;
             //ActivateSequenceProps();
         }
         //if (Input.GetKeyDown(KeyCode.X) && !playerInRange)
