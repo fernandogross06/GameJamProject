@@ -80,6 +80,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         // when to jump
+        /*
         if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
@@ -88,6 +89,7 @@ public class PlayerMovementTutorial : MonoBehaviour
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
+        */
     }
 
     private void MovePlayer()
