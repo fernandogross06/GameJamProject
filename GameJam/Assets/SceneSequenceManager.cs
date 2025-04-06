@@ -28,7 +28,9 @@ public class SceneSequenceManager : MonoBehaviour
     //Acceso al scripts de dialogo y movimiento
     public inkTestingScript inkTest;
     public PlayerCam cameraMovement;
+
     public PlayerMovementTutorial movement;
+
     bool cargado1 = false;
 
     //Fade pantalla negra
@@ -41,6 +43,7 @@ public class SceneSequenceManager : MonoBehaviour
     {
         cameraManager = cameraManagerGO.GetComponent<CameraManager>();
         cookingTrigger = cookingTriggerGO.GetComponent<CookingTrigger>();
+
 
         cookingSequence = true; // CAMBIAR LUEGO
         exitSequence = false;
@@ -140,7 +143,7 @@ public class SceneSequenceManager : MonoBehaviour
         // Con cambiar la camara se desactiva el control del jugador
         cameraManager.SwitchCamera(2); // Kitchen camera. Also disables player movement.
         cameraManager.currentTarget = femaleCharacter; // fijar en personaje femenino
-
+        movement.TeleportPlayer(new Vector3(13.36f, 1.5f, 7.17f));
         // Acá va el Dialogo de desayuno
 
         print("sirve StartFirstCouchSequence");
@@ -156,7 +159,7 @@ public class SceneSequenceManager : MonoBehaviour
 
         // TIENE QUE ESPERAR A QUE TERMINE EL DIALOGO
 
-        StartCoroutine(esperarFuncion());
+        StartCoroutine(esperarFirstCouchSequence());
 
 
         //while (dialogoActivo)
@@ -173,7 +176,8 @@ public class SceneSequenceManager : MonoBehaviour
         Invoke("StartLastCoachSequence", tiempoEspera);
     }
 
-    IEnumerator esperarFuncion()
+    // Usar plantilla para cambios de escenas 
+    IEnumerator esperarFirstCouchSequence()
     {
         while (inkTest.enabled == true)
         {

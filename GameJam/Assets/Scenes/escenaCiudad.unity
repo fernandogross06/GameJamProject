@@ -4961,17 +4961,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c262470468fe9741bdfe25ffbbc21d8, type: 3}
---- !u!114 &1277354780 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3053352984943462733, guid: 0c262470468fe9741bdfe25ffbbc21d8, type: 3}
-  m_PrefabInstance: {fileID: 1277354779}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f27d51ed69dc4204486b77c4996b320b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1318786806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6769,12 +6758,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inkTest: {fileID: 40180052}
   movement: {fileID: 198547305}
+  cameraManagerGO: {fileID: 403543354}
   cameraMovement: {fileID: 4054725581090808561}
   textPrefab: {fileID: 2115313340661218652, guid: ea2c27ca1fd2b364392ec131b811f61a, type: 3}
   canvasTransform: {fileID: 1162450462}
   textureCanvas: {fileID: 135887092}
   imagePrefab: {fileID: 3786581549280753128, guid: 0bdb79b6fe122c041ab91dd390ba2b8e, type: 3}
-  sceneController: {fileID: 1277354780}
 --- !u!4 &1830058920
 Transform:
   m_ObjectHideFlags: 0

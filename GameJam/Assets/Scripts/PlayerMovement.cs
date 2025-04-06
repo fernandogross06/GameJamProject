@@ -65,7 +65,10 @@ public class PlayerMovementTutorial : MonoBehaviour
 
 
     }
-
+    public void TeleportPlayer(Vector3 newCordinates)
+    {
+        transform.position = newCordinates;
+    }
     private void FixedUpdate()
     {
         MovePlayer();
