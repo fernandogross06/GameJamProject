@@ -138,6 +138,7 @@ public class CitySequenceManager : MonoBehaviour
         if (dialogo == 3)
         {
             inkTest.Reset("CuartaParte"); //llama al dialogo correspondiente
+            exitSequence = true;
         }
 
 

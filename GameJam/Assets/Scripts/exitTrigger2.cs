@@ -1,21 +1,20 @@
 using TMPro;
 using UnityEngine;
 
-public class ExitTrigger : MonoBehaviour
+public class exitTrigger2 : MonoBehaviour
 {
 
     public TextMeshProUGUI doorText;
     private bool playerInRange;
     public SceneController sceneController;
     [SerializeField] string sceneName;
-    public GameObject sceneManager;
-    public CitySequenceManager citySequenceManager;
+  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //text.gameObject.SetActive(false);
-        
+
     }
 
     private void Awake()
@@ -26,14 +25,14 @@ public class ExitTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange && citySequenceManager.exitSequence == true)
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
         {
             SFXScript.instance.stopClip();
             sceneController.loadScene(sceneName);
-            
+
             //ActivateSequenceProps();
         }
-        
+
     }
 
 
@@ -45,7 +44,7 @@ public class ExitTrigger : MonoBehaviour
             doorText.gameObject.SetActive(true);
             doorText.text = "Presione E para salir";
             playerInRange = true;
-            
+
         }
     }
     void OnTriggerExit(Collider other)
@@ -58,3 +57,4 @@ public class ExitTrigger : MonoBehaviour
         }
     }
 }
+

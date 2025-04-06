@@ -55,7 +55,7 @@ Podría ser anaranjado…#A2
 o tal vez blanco con manchas…#A1
 o uno negro… #A2
 
-\*nombre*
+Ana
 
 Amargado. #A1
 Mmm… Qué tal si compramos unas plantitas?#A2
@@ -67,13 +67,10 @@ Eso suena… ¿muy razonable?
 
 Cómo le gustan las sorpresas a usted *risa*
 
-Se me ocurrió algo aún mejor, qué tal si cada uno compra una planta diferente y el que consiga la mejor. GANA O ALGO CAMBIAR DIALOGO PLACEHOLDER#A2
+Por cierto, ¿no va siendo hora de que se vaya a trabajar?#A1
+Aah, en qué momento se hizo tan tarde… Nos vemos en la noche. Te amo.
+Ana: ¡Yo más!#A2
 
-OK PLACEHOLDER
-
-USTED NO SE TIENE QUE IR YA#A1
-
-SI YA ME VOY
 ->Fin
 
 ==Default==

@@ -2834,9 +2834,17 @@ PrefabInstance:
       value: segundaEscenaApartamentoDecorada
       objectReference: {fileID: 0}
     - target: {fileID: 6107010885060891320, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
+      propertyPath: sceneManager
+      value: 
+      objectReference: {fileID: 96444728}
+    - target: {fileID: 6107010885060891320, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
       propertyPath: sceneController
       value: 
       objectReference: {fileID: 410871761}
+    - target: {fileID: 6107010885060891320, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
+      propertyPath: citySequenceManager
+      value: 
+      objectReference: {fileID: 96444729}
     - target: {fileID: 7628969953448420829, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
       propertyPath: m_Name
       value: Puerta (1)
@@ -3600,9 +3608,17 @@ PrefabInstance:
       value: segundaEscenaApartamentoDecorada
       objectReference: {fileID: 0}
     - target: {fileID: 6107010885060891320, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
+      propertyPath: sceneManager
+      value: 
+      objectReference: {fileID: 96444728}
+    - target: {fileID: 6107010885060891320, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
       propertyPath: sceneController
       value: 
       objectReference: {fileID: 410871761}
+    - target: {fileID: 6107010885060891320, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
+      propertyPath: citySequenceManager
+      value: 
+      objectReference: {fileID: 96444729}
     - target: {fileID: 7628969953448420829, guid: b2b56f1f60eccac4481b6bac13d20b41, type: 3}
       propertyPath: m_Name
       value: Puerta
@@ -4136,6 +4152,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 888077947930326915, guid: fdfe83f047edc8041b7d5953f7f5e6b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467274817543210812, guid: fdfe83f047edc8041b7d5953f7f5e6b2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641293615929981477, guid: fdfe83f047edc8041b7d5953f7f5e6b2, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7361935737039865241, guid: fdfe83f047edc8041b7d5953f7f5e6b2, type: 3}
@@ -4869,6 +4893,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4263035456296153102, guid: 547ed3107bac6b04aad40d582c2ba4b3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4777906491378585015, guid: 547ed3107bac6b04aad40d582c2ba4b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.231
