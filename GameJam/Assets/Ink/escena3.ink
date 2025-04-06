@@ -8,7 +8,9 @@ Debería empezar a cocinar antes de que llegue Ana.
 
 ==SegundaParte==
 
-Voy a ver tele un rato mientras llega Ana. No debería tardar mucho.
+Voy a ver tele un rato mientras llega Ana. 
+
+No debería tardar mucho.
 ->Fin
 
 ==TerceraParte==
@@ -18,7 +20,8 @@ En apariencia, la joven se encontraba realizando compras en la capital al moment
 
 …
 
-La víctima fue hallada sin sus prendas y su rostro completamente desfigurado. Las autoridades todavía están investigando los detalles del incidente y la identidad de la persona fallecida. #T
+La víctima fue hallada sin sus prendas y su rostro completamente desfigurado. #T
+Las autoridades todavía están investigando los detalles del incidente y la identidad de la persona fallecida. #T
  
 …
 ->Fin
