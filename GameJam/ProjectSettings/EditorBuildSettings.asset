@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/escenaPrueba.unity
-    guid: ce681b15082f7884fb8748b823b6e09a
+    path: Assets/Scenes/escenaMainMenu.unity
+    guid: 2385b0901fafd0346b675e41dfa60712
   - enabled: 1
     path: Assets/Scenes/escenaApartamentoDecorada.unity
     guid: 306994152e653ea41a519ad54051f1a3
@@ -18,8 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/segundaEscenaApartamentoDecorada.unity
     guid: b174cd4261b97e8498368148b6298062
   - enabled: 1
-    path: Assets/Scenes/escenaMainMenu.unity
-    guid: 2385b0901fafd0346b675e41dfa60712
+    path: Assets/Scenes/continuara.unity
+    guid: 500dd890af2092048809b74204a92417
+  - enabled: 1
+    path: Assets/Scenes/escenaCreditos.unity
+    guid: 050b062c86bfd7841852296edc61d680
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
