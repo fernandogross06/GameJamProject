@@ -14,13 +14,13 @@ public class SFXScript : MonoBehaviour
         }
     }
 
-    public void suenaClip(AudioClip clipSFX, Transform spawn, float volumen, float largo, bool setLargo = false)
+    public void suenaClip(AudioClip clipSFX, Transform spawn, float volumen, float largo, bool setLargo = false, bool loop = true)
     {
         AudioSource source = Instantiate(objetoSFX, spawn.position, Quaternion.identity);
         source.clip = clipSFX;
         source.volume = volumen;
         source.Play();
-        source.loop = true;
+        source.loop = loop;
         float largoClip;
         if (setLargo)
         {

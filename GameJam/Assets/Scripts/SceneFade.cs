@@ -48,7 +48,7 @@ public class SceneFade : MonoBehaviour
         yield return fadeCoroutine(startColor, targetColor, textStartColor, textTargetColor, duration);
 
         float elapsedTime = 0f;
-        SFXScript.instance.suenaClip(suenaAuto, transform, 1f, 2f);
+        SFXScript.instance.suenaClip(suenaAuto, transform, 1f, 2f, loop: false);
        
 
         while (elapsedTime < blackImageDuration)

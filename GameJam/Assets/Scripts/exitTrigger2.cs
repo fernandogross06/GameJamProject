@@ -8,12 +8,15 @@ public class exitTrigger2 : MonoBehaviour
     private bool playerInRange;
     public SceneController sceneController;
     [SerializeField] string sceneName;
-  
+
+    public GameObject sceneSequenceGO;
+    SceneSequenceManager sceneSequenceManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //text.gameObject.SetActive(false);
+        sceneSequenceManager = sceneSequenceGO.GetComponent<SceneSequenceManager>();
 
     }
 
@@ -25,7 +28,7 @@ public class exitTrigger2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerInRange)
+        if (Input.GetKeyDown(KeyCode.E) && playerInRange && sceneSequenceManager.exitSequence)
         {
             SFXScript.instance.stopClip();
             sceneController.loadScene(sceneName);
